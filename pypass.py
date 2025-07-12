@@ -1,5 +1,5 @@
 import string
-import random
+import secrets
 from math import log2, floor
 
 def gen_password():
@@ -15,14 +15,14 @@ def gen_password():
 
     count = 0
     for i in range(21):
-        password += random.choice(total[count])
+        password += secrets.choice(total[count])
         if count < 3:
             count += 1
         else:
             count = 0
 
     mix = list(password)
-    random.shuffle(mix)
+    secrets.shuffle(mix)
 
     return "".join(mix)
 
