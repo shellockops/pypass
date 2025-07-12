@@ -1,29 +1,8 @@
-import string
-import random
+import pypass
 
 def main():
-
-
-    size = 20
-
-    total = []
-    total.append(string.ascii_lowercase)
-    total.append(string.ascii_uppercase)
-    total.append(string.punctuation)
-    total.append(string.digits)
-
-    password = ""
-
-    count = 0
-    for i in range(21):
-        password += random.choice(total[count])
-        if count < 3:
-            count += 1
-        else:
-            count = 0
-
-    mix = list(password)
-    random.shuffle(mix)
-
-    print("".join(mix))
+    #password = pypass.gen_password()
+    #print(password)
+    entropy = pypass.find_entropy("1Bankruptcies2&%")
+    print(entropy)
 main()
